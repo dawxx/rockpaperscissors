@@ -9,6 +9,7 @@ def user_choice():
                 continue
             break
         except ValueError: print("Podaj liczbe od 1 do 3")
+    
     if ui_number == 1:
         ui_choice = "Rock"
     elif ui_number == 2:
@@ -17,6 +18,7 @@ def user_choice():
     return ui_choice
 
 def determine_winner(ui_choice: int, bot_choice: str):
+    
     if ui_choice == bot_choice:
         return None
     elif ui_choice == "Rock" and bot_choice == "Scissors":
@@ -46,6 +48,7 @@ def game():
         print(f"Your choice: {ui_choice}, Bot choice {bot_choice}")
         print("Bot wins! :( +1 point for Bot!")
         winner = "Bot"
+    
     return winner
 
 def main():
@@ -54,6 +57,7 @@ def main():
             rounds = int(input("How many rounds?: "))
             break
         except ValueError: print("Podaj poprawną liczbe")
+    
     points = []
     for round in range(rounds):
         print(f"Round {round+1}")
@@ -67,4 +71,5 @@ def main():
     elif points.count('User') == points.count('Bot'):
         print("It's a TIE, try again")
     else: print("The winner of the game is BOT!!! try again :(") 
+
 main()
